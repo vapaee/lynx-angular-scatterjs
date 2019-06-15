@@ -66,17 +66,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _scatterjs_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @scatterjs/core */ "./node_modules/@scatterjs/core/dist/index.js");
-/* harmony import */ var _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scatterjs_core__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _scatterjs_eosjs2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @scatterjs/eosjs2 */ "./node_modules/@scatterjs/eosjs2/dist/index.js");
-/* harmony import */ var _scatterjs_eosjs2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scatterjs_eosjs2__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var eosjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! eosjs */ "./node_modules/eosjs/dist/index.js");
-/* harmony import */ var eosjs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(eosjs__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! scatterjs-plugin-lynx */ "./node_modules/scatterjs-plugin-lynx/dist/index.js");
-/* harmony import */ var scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var scatterjs_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! scatterjs-core */ "./node_modules/scatterjs-core/dist/index.js");
+/* harmony import */ var scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(scatterjs_core__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var scatterjs_plugin_eosjs2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! scatterjs-plugin-eosjs2 */ "./node_modules/scatterjs-plugin-eosjs2/dist/index.js");
+/* harmony import */ var scatterjs_plugin_eosjs2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(scatterjs_plugin_eosjs2__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! scatterjs-plugin-lynx */ "./node_modules/scatterjs-plugin-lynx/dist/index.js");
+/* harmony import */ var scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var eosjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! eosjs */ "./node_modules/eosjs/dist/index.js");
+/* harmony import */ var eosjs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(eosjs__WEBPACK_IMPORTED_MODULE_5__);
 
 
 // Scatter imports
+// import ScatterJS from '@scatterjs/core';
+// import ScatterEOS from '@scatterjs/eosjs2';
+// import {JsonRpc, Api} from 'eosjs';
+// import ScatterLynx from 'scatterjs-plugin-lynx';
 
 
 
@@ -94,25 +98,25 @@ var AppComponent = /** @class */ (function () {
             var network, rpc;
             var _this = this;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.plugins(new _scatterjs_eosjs2__WEBPACK_IMPORTED_MODULE_3___default.a(), new scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_5___default.a({ Api: eosjs__WEBPACK_IMPORTED_MODULE_4__["Api"], JsonRpc: eosjs__WEBPACK_IMPORTED_MODULE_4__["JsonRpc"] }));
-                network = _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.Network.fromJson({
+                scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.plugins(new scatterjs_plugin_eosjs2__WEBPACK_IMPORTED_MODULE_3___default.a(), new scatterjs_plugin_lynx__WEBPACK_IMPORTED_MODULE_4___default.a({ Api: eosjs__WEBPACK_IMPORTED_MODULE_5__["Api"], JsonRpc: eosjs__WEBPACK_IMPORTED_MODULE_5__["JsonRpc"] }));
+                network = scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.Network.fromJson({
                     blockchain: 'eos',
                     chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
                     host: 'nodes.get-scatter.com',
                     port: 443,
                     protocol: 'https'
                 });
-                rpc = new eosjs__WEBPACK_IMPORTED_MODULE_4__["JsonRpc"](network.fullhost());
-                _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.connect('YourAppName', { network: network }).then(function (connected) {
+                rpc = new eosjs__WEBPACK_IMPORTED_MODULE_5__["JsonRpc"](network.fullhost());
+                scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.connect('YourAppName', { network: network }).then(function (connected) {
                     _this.connected = connected;
                     if (!connected)
                         return console.error('no scatter');
                     _this.status = "wallet detected";
-                    var eos = _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.eos(network, eosjs__WEBPACK_IMPORTED_MODULE_4__["Api"], { rpc: rpc });
-                    _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.login().then(function (id) {
+                    var eos = scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.eos(network, eosjs__WEBPACK_IMPORTED_MODULE_5__["Api"], { rpc: rpc });
+                    scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.login().then(function (id) {
                         if (!id)
                             return console.error('no identity');
-                        var account = _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.account('eos');
+                        var account = scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.account('eos');
                         _this.status = "Logged as " + account.name;
                         _this.account = account;
                     });
@@ -123,7 +127,7 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.logout = function () {
         console.log("ScatterJS.forgetIdentity()");
-        _scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.forgetIdentity();
+        scatterjs_core__WEBPACK_IMPORTED_MODULE_2___default.a.forgetIdentity();
         this.status = "wallet detected";
         this.account = null;
     };
