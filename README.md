@@ -1,5 +1,8 @@
 
     ng new lynx-angular-scatterjs --minimal -f
     cd lynx-angular-scatterjs
-    npm i -S @scatterjs/core @scatterjs/eosjs2 eosjs@20.0.0
+    npm i -S scatterjs-core scatterjs-plugin-eosjs2 scatterjs-plugin-lynx eosjs
+    npm i -D @babel/runtime
+
+    
     

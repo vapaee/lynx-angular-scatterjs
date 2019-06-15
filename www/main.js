@@ -76,15 +76,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var eosjs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(eosjs__WEBPACK_IMPORTED_MODULE_5__);
 
 
+
+
+
+
 // Scatter imports
 // import ScatterJS from '@scatterjs/core';
 // import ScatterEOS from '@scatterjs/eosjs2';
 // import {JsonRpc, Api} from 'eosjs';
 // import ScatterLynx from 'scatterjs-plugin-lynx';
-
-
-
-
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'lynx-angular-scatterjs';

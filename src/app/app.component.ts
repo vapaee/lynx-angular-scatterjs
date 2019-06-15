@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 
+import ScatterJS from 'scatterjs-core';
+import ScatterEOS from 'scatterjs-plugin-eosjs2'
+import ScatterLynx from 'scatterjs-plugin-lynx'
+import {JsonRpc, Api} from 'eosjs';
+
 // Scatter imports
 // import ScatterJS from '@scatterjs/core';
 // import ScatterEOS from '@scatterjs/eosjs2';
 // import {JsonRpc, Api} from 'eosjs';
 // import ScatterLynx from 'scatterjs-plugin-lynx';
-
-import ScatterJS from 'scatterjs-core';
-import ScatterEOS from 'scatterjs-plugin-eosjs2'
-import ScatterLynx from 'scatterjs-plugin-lynx'
-import {JsonRpc, Api} from 'eosjs';
 
 @Component({
     selector: 'app-root',
